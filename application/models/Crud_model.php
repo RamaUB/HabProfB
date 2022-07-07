@@ -502,6 +502,7 @@ class Crud_model extends CI_Model {
         );
         $this->db->where('id', $course_id);
         $this->db->update('course', $updater);
+        echo "$course_id";
     }
 
     public function get_course_thumbnail_url($course_id) {

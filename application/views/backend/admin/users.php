@@ -54,6 +54,22 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="<?php echo site_url('admin/user_form/edit_user_form/'.$user['id']) ?>"><?php echo get_phrase('edit'); ?></a></li>
+
+                                       
+                                        <li>
+                                            <?php if ($user['role_id'] == 2): ?>
+                                                <a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url();?>admin/change_user_role_for_admin/1/<?php echo $user['id']; ?>');">
+                                                    <?php echo get_phrase('Make Investigator');?>
+                                                </a>
+                                            <?php else: ?>
+                                                <a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url();?>admin/change_user_role_for_admin/2/<?php echo $user['id']; ?>');">
+                                                    <?php echo get_phrase('Make Student');?>
+                                                </a>
+                                            <?php endif; ?>
+                                        </li>
+
+                                        
+
                                         <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('admin/users/delete/'.$user['id']); ?>');"><?php echo get_phrase('delete'); ?></a></li>
                                     </ul>
                                 </div>

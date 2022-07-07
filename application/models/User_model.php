@@ -19,7 +19,7 @@ class User_model extends CI_Model {
         if ($user_id > 0) {
             $this->db->where('id', $user_id);
         }
-        $this->db->where('role_id', 2);
+        //$this->db->where('role_id', 2);
         return $this->db->get('users');
     }
 
@@ -133,6 +133,17 @@ class User_model extends CI_Model {
 
         $this->upload_user_image($user_id);
     }
+
+    public function change_user_role($role = "", $user_id = "") {
+        $updater = array(
+            'role_id' => $role
+        );
+        $this->db->where('id', $user_id);
+        $this->db->update('users', $updater);
+    }
+
+
+
     public function delete_user($user_id = "") {
         $this->db->where('id', $user_id);
         $this->db->delete('users');

@@ -153,6 +153,16 @@ class Admin extends CI_Controller {
     }
   }
 
+
+  public function change_user_role_for_admin($updated_role = "", $user_id = "") {
+    $this->user_model->change_user_role($updated_role, $user_id);
+    $this->session->set_flashdata('flash_message', get_phrase('user_role_updated'));
+    redirect(site_url('admin/users'));
+  }
+
+
+
+
   public function enrol_history($param1 = "") {
     if ($this->session->userdata('admin_login') != true) {
       redirect(site_url('login'), 'refresh');

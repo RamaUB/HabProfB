@@ -79,6 +79,18 @@
                                                 <textarea name="biography" id = "summernote-basic" class="form-control"><?php echo $user_data['biography']; ?></textarea>
                                             </div>
                                         </div>
+
+<!--
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-3 col-form-label" for="role_id"><?php echo get_phrase('role'); ?> <span class="required">*</span> </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="role_id" name="role_id" value="<?php echo $user_data['role_id']; ?>" required>
+                                            </div>
+                                        </div>
+-->
+
+
+
                                         <div class="form-group row mb-3">
                                             <label class="col-md-3 col-form-label" for="user_image"><?php echo get_phrase('user_image'); ?></label>
                                             <div class="col-md-9">
